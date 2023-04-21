@@ -1,5 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
+import Header from '~/components/header/header';
 
 
 
@@ -22,6 +23,7 @@ export default component$(() => {
     const customerSignal = useCustomer();
     return (
         <div>
+            <Header pageName="Contact info" />
             <div>{customerSignal.value.firstName} {customerSignal.value.lastName}</div>
             <div>{customerSignal.value.phoneNumber}</div>
             <div>{customerSignal.value.email}</div>

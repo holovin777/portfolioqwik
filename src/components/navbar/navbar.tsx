@@ -1,8 +1,13 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { $, type Signal, component$, useSignal } from '@builder.io/qwik';
 import Navbutton from './navbutton/navbutton';
+interface NavbarProps {
+    darkModeSignal: Signal
+}
 
+export default component$<NavbarProps>((props) => {
 
-export default component$(() => {
+        
+
 
     const mobileMenuHiddenSignal = useSignal<boolean>(true)
 
@@ -64,7 +69,11 @@ export default component$(() => {
                 )
             }
 
+            <div>
+                <button onClick$={$(() => props.darkModeSignal.value = !props.darkModeSignal.value)}>DrakMode</button>
+            </div>
+
         </nav>
 
     );
-});
+})
