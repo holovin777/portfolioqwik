@@ -3,6 +3,7 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 
 
 export default component$(() => {
+  
   return (
     <div>
       <h1 class="text-3xl font-bold underline">Hello, world!</h1>
