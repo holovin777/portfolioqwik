@@ -6,7 +6,7 @@ interface NavbarProps {
 
 export default component$<NavbarProps>((props) => {
 
-        
+
 
 
     const mobileMenuHiddenSignal = useSignal<boolean>(true)
@@ -14,7 +14,7 @@ export default component$<NavbarProps>((props) => {
 
     return (
 
-        <nav class="bg-gray-800">
+        <nav class="bg-gray-300 text-black dark:bg-gray-800 dark:text-white">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div class="relative flex h-16 items-center justify-between">
                     <div class="absolute inset-y-0 left-0 flex items-center xl:hidden">
@@ -50,8 +50,15 @@ export default component$<NavbarProps>((props) => {
                             </div>
                         </div>
                     </div>
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <div class="relative ml-3 text-xs">
+                                <button onClick$={$(() => props.darkModeSignal.value = !props.darkModeSignal.value)}>DrakMode</button>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+
 
             {!mobileMenuHiddenSignal.value &&
                 (
@@ -69,11 +76,7 @@ export default component$<NavbarProps>((props) => {
                 )
             }
 
-            <div>
-                <button onClick$={$(() => props.darkModeSignal.value = !props.darkModeSignal.value)}>DrakMode</button>
-            </div>
-
-        </nav>
+        </nav >
 
     );
 })

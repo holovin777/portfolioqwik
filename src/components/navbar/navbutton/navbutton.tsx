@@ -9,8 +9,8 @@ interface NavbuttonProps {
 
 export default component$<NavbuttonProps>((props) => {
 
-    const navbarLinkClass: string = "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-bold"
-    const mobileNavbarLinkClass: string = "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-xl font-bold"
+    const navbarLinkClass: string = "text-black dark:text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-bold"
+    const mobileNavbarLinkClass: string = "text-black dark:text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-xl font-bold"
     //const currentNavbarLinkClass: string = "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
 
 
