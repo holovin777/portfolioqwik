@@ -17,6 +17,7 @@ export const useCustomer = routeLoader$(async () => {
         email: string;
         website: string;
         residence: string;
+        desiredProfession: string;
     };
 });
 
@@ -32,6 +33,7 @@ export default component$(() => {
                 email={customerSignal.value.email}
                 website={customerSignal.value.website}
                 residence={customerSignal.value.residence}
+                desiredProfession={customerSignal.value.desiredProfession}
             />
         </div>
     );

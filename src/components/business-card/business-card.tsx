@@ -8,42 +8,53 @@ interface CustomerProps {
     email: string;
     website: string;
     residence: string;
+    desiredProfession: string;
 }
 
 export default component$<CustomerProps>((props) => {
 
-    const customerName: string = props.firstName + " " + props.lastName;
+
 
     return (
 
-        <div class="flex flex-col m-4 p-4 rounded-xl bg-sky-100 dark:bg-indigo-950">
+        <div>
 
-            <BusinessCardItem
-                textXl={true}
-                message={customerName}
-            />
 
-            <BusinessCardItem
-                icon="/icons/phone.svg"
-                message={props.phoneNumber}
-            />
+            <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 m-4">
 
-            <BusinessCardItem
-                icon="/icons/email.svg"
-                message={props.email}
-            />
+                <BusinessCardItem
+                    icon="/icons/customer.svg"
+                    phoneNumber={props.firstName + " " + props.lastName}
+                    message="Name"
+                />
 
-            <BusinessCardItem
-                icon="/icons/website.svg"
-                message={props.website}
-            />
+                <BusinessCardItem
+                    icon="/icons/phone.svg"
+                    phoneNumber={props.phoneNumber}
+                    message="Phone"
+                />
 
-            <BusinessCardItem
-                icon="/icons/location.svg"
-                message={props.residence}
-            />
+                <BusinessCardItem
+                    icon="/icons/email.svg"
+                    email={props.email}
+                    message="Email"
+                />
 
+                <BusinessCardItem
+                    icon="/icons/website.svg"
+                    message={props.website.slice(8)}
+                    link={props.website}
+                />
+
+                <BusinessCardItem
+                    icon="/icons/location.svg"
+                    message={props.residence}
+                />
+
+            </div>
         </div>
+
+
 
     );
 
