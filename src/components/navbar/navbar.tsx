@@ -14,7 +14,7 @@ export default component$<NavbarProps>((props) => {
 
     return (
 
-        <nav class="bg-gray-300 text-black dark:bg-gray-800 dark:text-white">
+        <nav class="bg-gradient-to-r from-indigo-400 to-blue-300 text-black dark:bg-gradient-to-r dark:from-indigo-950 dark:to-blue-900 dark:text-white">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div class="relative flex h-16 items-center justify-between">
                     <div class="absolute inset-y-0 left-0 flex items-center xl:hidden">
