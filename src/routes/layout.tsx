@@ -17,7 +17,7 @@ export default component$(() => {
 
   return (
     <div class={darkModeSignal.value ? "dark" : ""}>
-      <main class="bg-white dark:bg-black dark:text-white">
+      <main>
         <Navbar darkModeSignal={darkModeSignal} />
         <Slot />
       </main>
