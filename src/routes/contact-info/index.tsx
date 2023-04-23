@@ -1,5 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
+import BusinessCard from '~/components/business-card/business-card';
 import Header from '~/components/header/header';
 
 
@@ -16,6 +17,7 @@ export const useCustomer = routeLoader$(async () => {
         email: string;
         website: string;
         residence: string;
+        desiredProfession: string;
     };
 });
 
@@ -24,11 +26,15 @@ export default component$(() => {
     return (
         <div>
             <Header pageName="Contact info" />
-            <div>{customerSignal.value.firstName} {customerSignal.value.lastName}</div>
-            <div>{customerSignal.value.phoneNumber}</div>
-            <div>{customerSignal.value.email}</div>
-            <div>{customerSignal.value.website}</div>
-            <div>{customerSignal.value.residence}</div>
+            <BusinessCard
+                firstName={customerSignal.value.firstName}
+                lastName={customerSignal.value.lastName}
+                phoneNumber={customerSignal.value.phoneNumber}
+                email={customerSignal.value.email}
+                website={customerSignal.value.website}
+                residence={customerSignal.value.residence}
+                desiredProfession={customerSignal.value.desiredProfession}
+            />
         </div>
     );
 });

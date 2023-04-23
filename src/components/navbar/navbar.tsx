@@ -36,7 +36,7 @@ export default component$<NavbarProps>((props) => {
                     </div>
                     <div class="flex flex-1 items-center justify-center xl:items-stretch xl:justify-start">
                         <div class="flex flex-shrink-0 items-center">
-                            <p class="text-sky-400">Curriculum</p>
+                            <p class="text-sky-500">Curriculum</p>
                         </div>
                         <div class="hidden xl:ml-6 xl:block">
                             <div class="flex space-x-4">
