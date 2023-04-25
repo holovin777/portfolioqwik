@@ -10,7 +10,6 @@ export const useCustomer = routeLoader$(async () => {
         headers: { Accept: 'application/json' },
     });
     return (await response.json()) as {
-        id: string;
         firstName: string;
         lastName: string;
         phoneNumber: string;
