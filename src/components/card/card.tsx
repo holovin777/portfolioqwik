@@ -1,11 +1,11 @@
 import { component$ } from '@builder.io/qwik';
 
 interface CardProps {
-    startDate: string;
+    startDate?: string;
     finishDate?: string;
     title: string;
     subtitle: string;
-    footer: string;
+    footer?: string;
     items?: string[]
 }
 
@@ -36,9 +36,12 @@ export default component$<CardProps>((props) => {
                     </div>
                 }
             </div>
-            <div class="text-xs text-center text-yellow-300 my-2">
-                Started studying {props.startDate}
-            </div>
+            {
+                !(props.startDate === undefined) &&
+                <div class="text-xs text-center text-yellow-300 my-2">
+                    Started studying {props.startDate}
+                </div>
+            }
             {
                 !(props.finishDate === null) &&
                 <div class="text-xs text-center text-yellow-300 m-1">
