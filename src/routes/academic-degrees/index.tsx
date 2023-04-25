@@ -20,7 +20,7 @@ export const useStudying = routeLoader$(async () => {
         faculty?: string,
         department: string,
         speciality: string,
-        course: string,
+
         startedStudying: string,
         finishedStudying?: string,
     }];
