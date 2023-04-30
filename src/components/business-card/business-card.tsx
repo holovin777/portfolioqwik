@@ -40,11 +40,12 @@ export default component$<CustomerProps>((props) => {
                     message="Email"
                 />
 
-                <BusinessCardItem
-                    icon="/icons/website.svg"
-                    message={props.website.slice(8)}
-                    link={props.website}
-                />
+                    <BusinessCardItem
+                        icon="/icons/website.svg"
+                        message={props.website.slice(8)}
+                        link={props.website}
+                    />
+
 
                 <BusinessCardItem
                     icon="/icons/location.svg"

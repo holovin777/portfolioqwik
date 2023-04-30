@@ -6,7 +6,7 @@ import Header from '~/components/header/header';
 
 
 export const useCustomer = routeLoader$(async () => {
-    const response = await fetch('http://localhost:8080/api/v1/customer/4d936c7c-05ea-45f2-a91f-08518491c986', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}api/v1/customer/${import.meta.env.VITE_CUSTOMER_ID}`, {
         headers: { Accept: 'application/json' },
     });
     return (await response.json()) as {
