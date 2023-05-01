@@ -3,7 +3,7 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 import { routeLoader$ } from '@builder.io/qwik-city';
 
 export const useCustomer = routeLoader$(async () => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}api/v1/customer/${import.meta.env.VITE_CUSTOMER_ID}`, {
+    const response = await fetch(`${import.meta.env.PUBLIC_API_URL}api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}`, {
         headers: { Accept: 'application/json' },
     });
     return (await response.json()) as {
