@@ -4,7 +4,7 @@ interface CardProps {
     startDate?: string;
     finishDate?: string;
     title: string;
-    subtitle: string;
+    subtitle?: string;
     footer?: string;
     items?: string[]
 }
@@ -18,9 +18,12 @@ export default component$<CardProps>((props) => {
                 <div class="text-xl font-bold my-1 mx-3">
                     {props.title}
                 </div>
-                <div class="text-gray-700 dark:text-gray-400 my-1 mx-6">
-                    {props.subtitle}
-                </div>
+                {
+                    !(props.subtitle === undefined) &&
+                    <div class="text-gray-700 dark:text-gray-400 my-1 mx-6">
+                        {props.subtitle}
+                    </div>
+                }
                 {
                     !(props.items === undefined) &&
                     props.items.map((p) =>
@@ -43,7 +46,7 @@ export default component$<CardProps>((props) => {
                 </div>
             }
             {
-                !(props.finishDate === null) &&
+                !(props.finishDate === undefined) &&
                 <div class="text-xs text-center text-yellow-300 m-1">
                     Finished studying {props.finishDate}
                 </div>
