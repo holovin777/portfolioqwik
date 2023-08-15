@@ -3,6 +3,8 @@ import { component$ } from '@builder.io/qwik';
 interface CardProps {
     startDate?: string;
     finishDate?: string;
+    startedWork?: string;
+    finishedWork?: string;
     title: string;
     subtitle: string;
     footer?: string;
@@ -37,15 +39,27 @@ export default component$<CardProps>((props) => {
                 }
             </div>
             {
-                !(props.startDate === undefined) &&
+                !(props.startDate === undefined || props.startDate === null) &&
                 <div class="text-xs text-center text-yellow-300 my-2">
                     Started studying {props.startDate}
                 </div>
             }
             {
-                !(props.finishDate === null) &&
+                !(props.finishDate === undefined || props.startDate === null) &&
                 <div class="text-xs text-center text-yellow-300 m-1">
                     Finished studying {props.finishDate}
+                </div>
+            }
+            {
+                !(props.startedWork === undefined || props.startedWork === null) &&
+                <div class="text-xs text-center text-yellow-300 my-2">
+                    Started working {props.startedWork}
+                </div>
+            }
+            {
+                !(props.finishedWork === undefined || props.finishedWork === null) &&
+                <div class="text-xs text-center text-yellow-300 m-1">
+                    Finished working {props.finishedWork}
                 </div>
             }
         </div>
