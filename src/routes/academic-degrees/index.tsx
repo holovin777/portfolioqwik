@@ -6,7 +6,7 @@ import Header from '~/components/header/header';
 
 
 export const useStudying = routeLoader$(async () => {
-    const response = await fetch(`${import.meta.env.PUBLIC_API_URL}api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}/qualification/all`, {
+    const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}/qualification/all`, {
         headers: { Accept: 'application/json' },
     });
     return (await response.json()) as [{

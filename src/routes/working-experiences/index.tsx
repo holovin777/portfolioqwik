@@ -6,7 +6,7 @@ import Header from '~/components/header/header';
 
 
 export const useWorkingExperiences = routeLoader$(async () => {
-    const response = await fetch(`${import.meta.env.PUBLIC_API_URL}api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}/working-experience/all`, {
+    const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}/working-experience/all`, {
         headers: { Accept: 'application/json' },
     });
     return (await response.json()) as [{
@@ -31,7 +31,7 @@ export default component$(() => {
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 {
                     customerWorkingExperiences.value.map((we) =>
-                        <Card key={we.id} title={we.positionAtWork.name} subtitle={we.company.name} startDate={we.startedWork} finishDate={we.finishedWork} footer={we.company.location} />
+                        <Card key={we.id} title={we.positionAtWork.name} subtitle={we.company.name} startedWork={we.startedWork} finishedWork={we.finishedWork} footer={we.company.location} />
                     )
                 }
             </div>
