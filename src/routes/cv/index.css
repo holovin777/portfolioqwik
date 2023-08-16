@@ -1,0 +1,11 @@
+tr:nth-child(even) {
+    background-color: #efeded;
+}
+
+thead {
+    background-color: #d3d3d3;
+}
+
+.table-container {
+    overflow-x: auto;
+}
