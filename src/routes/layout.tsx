@@ -2,6 +2,8 @@ import { component$, Slot, useSignal } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
 import Navbar from '~/components/navbar/navbar';
 
+import './styles.css'
+
 
 export const useServerTimeLoader = routeLoader$(() => {
   return {
