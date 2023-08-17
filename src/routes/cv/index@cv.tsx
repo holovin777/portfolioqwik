@@ -66,14 +66,14 @@ export default component$(() => {
     <div class="p-4">
       <div class="text-center text-3xl pb-4">Curriculum vitae</div>
       <div class="m-4 text-4xl font-bold">{customerSignal.value.firstName + " " + customerSignal.value.lastName}</div>
-      <div class=""> Tel: {customerSignal.value.phoneNumber}</div>
-      <div class="">Birtday: {customerSignal.value.birthday}</div>
-      <div class="">Email: {customerSignal.value.email}</div>
-      <div class="">Residance: {customerSignal.value.residence}</div>
-      <a href={customerSignal.value.website}>Website: {customerSignal.value.website}</a>
-      <div class="">Driving license: {customerSignal.value.drivingLicense}</div>
+      <div class="">Tel: <span class="font-bold">{customerSignal.value.phoneNumber}</span></div>
+      <div class="">Date of birth: <span class="font-bold">{customerSignal.value.birthday}</span></div>
+      <div class="">Email: <span class="font-bold">{customerSignal.value.email}</span></div>
+      <div class="">Residance: <span class="font-bold">{customerSignal.value.residence}</span></div>
+      <a href={customerSignal.value.website}>Website: <span class="font-bold">{customerSignal.value.website}</span></a>
+      <div class="">Driving license: <span class="font-bold">{customerSignal.value.drivingLicense}</span></div>
 
-      <div class="table-container flex justify-center">
+      <div class="table-container flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
           <caption class="caption-top text-2xl font-bold p-4">
             Working experiences
@@ -99,7 +99,7 @@ export default component$(() => {
         </table>
       </div>
 
-      <div class="table-container flex justify-center">
+      <div class="table-container flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
           <caption class="caption-top text-2xl font-bold p-4">
             Course certifications
@@ -124,7 +124,7 @@ export default component$(() => {
         </table>
       </div>
 
-      <div class="table flex justify-center">
+      <div class="table flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
           <caption class="caption-top text-2xl font-bold p-4">
             Academic degrees
