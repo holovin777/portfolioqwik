@@ -1,5 +1,6 @@
 import { $, type Signal, component$, useSignal } from '@builder.io/qwik';
 import Navbutton from './navbutton/navbutton';
+
 interface NavbarProps {
     darkModeSignal: Signal
 }

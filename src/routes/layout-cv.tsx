@@ -1,4 +1,4 @@
-import { component$, Slot, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, Slot } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
 
 
@@ -13,12 +13,7 @@ export const useServerTimeLoader = routeLoader$(() => {
 export default component$(() => {
 
 
-  useStylesScoped$(`
-    :global(body) {
-    background-color: #ffffff;
-    background-image: url("");
-    }
-  `);
+
 
 
   return (

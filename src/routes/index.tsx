@@ -20,9 +20,9 @@ export default component$(() => {
   
   return (
     <div class="p-4">
-      <div class="dark:text-gray-300 text-4xl font-bold">{customerSignal.value.firstName + " " + customerSignal.value.lastName}</div>
-      <div class="dark:text-gray-400 text-xl">{customerSignal.value.desiredProfession}</div>
-      <div class="my-4 dark:text-gray-100"> - {customerSignal.value.description}</div>
+      <div class="dark:text-indigo-300 text-4xl font-bold">{customerSignal.value.firstName + " " + customerSignal.value.lastName}</div>
+      <div class="dark:text-indigo-400 text-4xl">{customerSignal.value.desiredProfession}</div>
+      <div class="my-4 dark:text-indigo-500 text-2xl"> - {customerSignal.value.description}</div>
     </div>
   );
 });
