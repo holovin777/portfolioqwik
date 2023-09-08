@@ -17,7 +17,7 @@ export default component$(() => {
 
   return (
     <div class={darkModeSignal.value ? "dark" : ""}>
-      <main class="dark:bg-[url(https://images.unsplash.com/photo-1570634433336-be7629414ce1)] bg-[url(https://images.unsplash.com/photo-1502457937844-a020e34c031a)] bg-cover bg-center bg-fixed min-h-screen">
+      <main class="dark:bg-[url(https://source.unsplash.com/una-vista-ravvicinata-di-una-superficie-metallica-W8q2InyFBt8)] bg-[url(https://source.unsplash.com/3Cpws7ibtfo)] bg-cover bg-center bg-fixed min-h-screen">
         <Navbar darkModeSignal={darkModeSignal} />
         <Slot />
       </main>
