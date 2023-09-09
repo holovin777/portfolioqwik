@@ -1,17 +1,13 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { routeLoader$ } from '@builder.io/qwik-city';
+import type CustomerProps from '~/interfaces/CustomerProps';
 
 export const useCustomer = routeLoader$(async () => {
     const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}`, {
         headers: { Accept: 'application/json' },
     });
-    return (await response.json()) as {
-        firstName: string;
-        lastName: string;
-        desiredProfession: string;
-        description: string;
-    };
+    return await response.json() as CustomerProps;
 });
 
 export default component$(() => {

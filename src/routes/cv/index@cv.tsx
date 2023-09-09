@@ -3,58 +3,14 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 import { routeLoader$ } from '@builder.io/qwik-city';
 
 import styles from './index.css?inline'
+import type CustomerProps from '~/interfaces/CustomerProps';
 
 
 export const useCustomer = routeLoader$(async () => {
   const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}`, {
     headers: { Accept: 'application/json' },
   });
-  return (await response.json()) as {
-    firstName: string;
-    lastName: string;
-    desiredProfession: string;
-    description: string;
-    phoneNumber: string;
-    birthday: string;
-    email: string;
-    residence: string;
-    website: string;
-    drivingLicense: string;
-    workingExperiences: {
-      id: number,
-      positionAtWork: {
-        id: number,
-        name: string,
-        nameItaly: string
-      },
-      company: {
-        id: number,
-        name: string,
-        location: string
-      },
-      startedWork: string,
-      finishedWork: string
-    }[],
-    qualifications: {
-      id: number,
-      educationalInstitution: {
-        id: string,
-        name: string,
-        studyPlace: string,
-        location: string
-      },
-      academicDegree: string,
-      faculty: string,
-      department: string,
-      speciality: string,
-      course: {
-        id: number,
-        name: string
-      },
-      startedStudying: string,
-      finishedStudying: string
-    }[];
-  };
+  return (await response.json()) as CustomerProps;
 });
 
 export default component$(() => {
