@@ -2,26 +2,22 @@ import { component$ } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
 import Card from '~/components/card/card';
 import Header from '~/components/header/header';
+import type QualificationProps from '~/interfaces/QualificationProps';
 
 
 
-export const useStudying = routeLoader$(async () => {
-    const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}/qualification/all`, {
-        headers: { Accept: 'application/json' },
-    });
-    return (await response.json()) as [{
-        id: number,
-        educationalInstitution: {
-            name: string,
-            studyPlace: string,
-        },
-        course: {name: string},
-        finishedStudying?: string,
-    }];
+export const useQualifications = routeLoader$(async () => {
+    const response = await fetch(
+        `${import.meta.env.PUBLIC_API_URL}/api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}/qualification/all`,
+        {
+            headers: { Accept: 'application/json' },
+        }
+    );
+    return (await response.json()) as QualificationProps[];
 });
 
 export default component$(() => {
-    const customerStudying = useStudying();
+    const qualificationsSignal = useQualifications();
     return (
 
         <div>
@@ -29,19 +25,18 @@ export default component$(() => {
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 {
-                    customerStudying.value.map((ad) =>
-                            (ad.educationalInstitution.studyPlace === "COURSE") &&
-                            <Card
-                                key={ad.id}
-                                title={ad.course.name}
-                                subtitle={ad.educationalInstitution.name}
-                                finishDate={ad.finishedStudying}
-                            />
+                    qualificationsSignal.value.map((qualification) =>
+                        (qualification.educationalInstitution.studyPlace === "COURSE") &&
+                        <Card
+                            key={qualification.id}
+                            title={qualification.course.name}
+                            subtitle={qualification.educationalInstitution.name}
+                            finishDate={qualification.finishedStudying}
+                        />
                     )
                 }
             </div>
         </div>
+
     );
 });
-
-
