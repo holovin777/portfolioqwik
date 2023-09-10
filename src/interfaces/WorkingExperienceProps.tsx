@@ -1,9 +1,9 @@
 import type CompanyProps from "./CompanyProps";
-import type PositionAtWork from "./PositionAtWork";
+import type PositionAtWorkProps from "./PositionAtWorkProps";
 
 export default interface WorkingExperienceProps {
     id: number,
-    positionAtWork: PositionAtWork,
+    positionAtWork: PositionAtWorkProps,
     company: CompanyProps,
     startedWork: string,
     finishedWork: string

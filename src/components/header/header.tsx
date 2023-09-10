@@ -1,8 +1,5 @@
 import { component$ } from '@builder.io/qwik';
-
-interface HeaderProps {
-    pageName: string;
-}
+import type HeaderProps from '~/interfaces/HeaderProps';
 
 export default component$<HeaderProps>((props) => {
 
@@ -12,4 +9,3 @@ export default component$<HeaderProps>((props) => {
 
     );
 });
-

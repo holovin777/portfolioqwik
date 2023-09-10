@@ -1,9 +1,9 @@
 import type CourseProps from "./CourseProps";
-import type EducationalInstitution from "./EducationalInstitution";
+import type EducationalInstitutionProps from "./EducationalInstitutionProps";
 
 export default interface QualificationProps {
       id: number,
-      educationalInstitution: EducationalInstitution,
+      educationalInstitution: EducationalInstitutionProps,
       academicDegree: string,
       faculty: string,
       department: string,

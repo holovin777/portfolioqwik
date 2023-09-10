@@ -1,4 +1,4 @@
-export default interface PositionAtWork {
+export default interface PositionAtWorkProps {
     id: number,
     name: string,
     nameItaly: string

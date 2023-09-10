@@ -1,14 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
-
-interface BuisnessCardItemProps {
-    message: string;
-    icon?: string;
-    textXl?: boolean;
-    link?: string;
-    phoneNumber?: string;
-    email?: string;
-}
+import type BuisnessCardItemProps from '~/interfaces/BuisnessCardItemProps';
 
 export default component$<BuisnessCardItemProps>((props) => {
     return (
@@ -35,8 +27,11 @@ export default component$<BuisnessCardItemProps>((props) => {
                                                 <a href={"mailto:" + props.email}>{props.email}</a>
                                         ) :
                                         <Link href={props.link}>{props.message}</Link>
-                                ) :
-                                (<a href={"tel:" + props.phoneNumber}>{props.phoneNumber}</a>)
+                                )
+                                :
+                                (
+                                    <a href={"tel:" + props.phoneNumber}>{props.phoneNumber}</a>
+                                )
                         }
                     </div>
                     <p class="mt-2 text-sm text-gray-500">
