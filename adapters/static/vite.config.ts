@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: "https://curriculum.holovin.com",
+        origin: ("https://www.holovin.com"),
       }),
     ],
   };
