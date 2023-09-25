@@ -30,13 +30,13 @@ export default component$<CardProps>((props) => {
             </div>
             {
                 !(props.startDate === undefined || props.startDate === null) &&
-                <div class="text-xs text-center dark:text-yellow-300 text-yellow-600 my-2">
+                <div class="text-xs text-center dark:text-yellow-300 text-yellow-900 my-2">
                     Started studying {props.startDate}
                 </div>
             }
             {
                 !(props.finishDate === undefined || props.startDate === null) &&
-                <div class="text-xs text-center dark:text-yellow-300 text-yellow-600 m-1">
+                <div class="text-xs text-center dark:text-yellow-300 text-yellow-900 m-1">
                     Finished studying {props.finishDate}
                 </div>
             }
