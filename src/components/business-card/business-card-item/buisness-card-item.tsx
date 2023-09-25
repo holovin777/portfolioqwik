@@ -7,7 +7,7 @@ export default component$<BuisnessCardItemProps>((props) => {
 
         <div>
 
-            <div class="flex items-start rounded-xl bg-indigo-300 dark:bg-indigo-950 dark:text-white p-4 shadow-lg">
+            <div class="flex items-start rounded-xl bg-blue-300 dark:bg-blue-950 dark:text-white p-4 shadow-lg">
                 <div class="flex h-12 w-12 items-center justify-center rounded-full border border-blue-100 bg-blue-50">
                     {
                         !(props.icon === undefined) &&
