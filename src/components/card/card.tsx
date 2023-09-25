@@ -42,13 +42,13 @@ export default component$<CardProps>((props) => {
             }
             {
                 !(props.startedWork === undefined || props.startedWork === null) &&
-                <div class="text-xs text-center dark:text-yellow-300 text-yellow-600 my-2">
+                <div class="text-xs text-center dark:text-yellow-300 text-yellow-900 my-2">
                     Started working {props.startedWork}
                 </div>
             }
             {
                 !(props.finishedWork === undefined || props.finishedWork === null) &&
-                <div class="text-xs text-center dark:text-yellow-300 text-yellow-600 m-1">
+                <div class="text-xs text-center dark:text-yellow-300 text-yellow-900 m-1">
                     Finished working {props.finishedWork}
                 </div>
             }
