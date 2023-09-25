@@ -1,6 +1,7 @@
 import { $, component$, useSignal } from '@builder.io/qwik';
 import Navbutton from './navbutton/navbutton';
 import type NavbarProps from '~/interfaces/NavbarProps';
+import { Link } from '@builder.io/qwik-city';
 
 export default component$<NavbarProps>((props) => {
     const mobileMenuHiddenSignal = useSignal<boolean>(true)
@@ -28,7 +29,7 @@ export default component$<NavbarProps>((props) => {
                     </div>
                     <div class="flex flex-1 items-center justify-center xl:items-stretch xl:justify-start">
                         <div class="flex flex-shrink-0 items-center">
-                            <p class="text-sky-900 dark:text-sky-500">Curriculum</p>
+                            <Link href="/" class="text-sky-900 dark:text-sky-500">Curriculum</Link>
                         </div>
                         <div class="hidden xl:ml-6 xl:block">
                             <div class="flex space-x-4">

@@ -5,7 +5,7 @@ export default component$<HeaderProps>((props) => {
 
     return (
 
-        <div class="dark:text-indigo-400 text-center text-4xl font-black p-3">{props.pageName}</div>
+        <div class="dark:text-sky-400 text-center text-4xl font-black p-3">{props.pageName}</div>
 
     );
 });
