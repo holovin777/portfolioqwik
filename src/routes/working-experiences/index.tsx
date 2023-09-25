@@ -4,8 +4,6 @@ import Card from '~/components/card/card';
 import Header from '~/components/header/header';
 import type WorkingExperienceProps from '~/interfaces/WorkingExperienceProps';
 
-
-
 export const useWorkingExperiences = routeLoader$(async () => {
     const response = await fetch(
         `${import.meta.env.PUBLIC_API_URL}/api/v1/customer/${import.meta.env.PUBLIC_CUSTOMER_ID}/working-experience/all`,

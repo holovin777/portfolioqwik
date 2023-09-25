@@ -5,7 +5,7 @@ export default component$<CardProps>((props) => {
 
     return (
 
-        <div class="bg-blue-300 bg-opacity-75 text-indigo-900 dark:bg-blue-950 dark:bg-opacity-75 rounded-lg m-6 p-2 dark:text-indigo-300">
+        <div class="bg-blue-300 bg-opacity-75 text-sky-900 dark:bg-blue-950 dark:bg-opacity-75 rounded-lg m-6 p-2 dark:text-sky-300">
             <div class="">
                 <div class="text-xl font-bold my-1 mx-3">
                     {props.title}
