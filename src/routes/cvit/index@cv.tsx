@@ -49,35 +49,37 @@ export default component$(() => {
   const qualificationsSignal = useQualifications();
 
   return (
+
     <div class="p-4">
+
       <div class="text-center text-3xl pb-4">Curriculum vitae</div>
       <div class="m-4 text-4xl font-bold">{customerSignal.value.firstName + " " + customerSignal.value.lastName}</div>
-      <div class="">Tel: <span class="font-bold">{customerSignal.value.phoneNumber}</span></div>
-      <div class="">Date of birth: <span class="font-bold">{customerSignal.value.birthday}</span></div>
+      <div class="">Numero: <span class="font-bold">{customerSignal.value.phoneNumber}</span></div>
+      <div class="">Data di nacsita: <span class="font-bold">{customerSignal.value.birthday}</span></div>
       <div class="">Email: <span class="font-bold">{customerSignal.value.email}</span></div>
-      <div class="">Residance: <span class="font-bold">{customerSignal.value.residence}</span></div>
-      <a href={customerSignal.value.website}>Website: <span class="font-bold">{customerSignal.value.website}</span></a>
-      <div class="">Driving license: <span class="font-bold">{customerSignal.value.drivingLicense}</span></div>
+      <div class="">Residenza: <span class="font-bold">{customerSignal.value.residence}</span></div>
+      <a href={customerSignal.value.website}>Sito web: <span class="font-bold">{customerSignal.value.website}</span></a>
+      <div class="">Patente: <span class="font-bold">{customerSignal.value.drivingLicense}</span></div>
 
       <div class="table-container flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
           <caption class="caption-top text-2xl font-bold p-4">
-            Working experiences
+            Esperienze lavorative
           </caption>
           <thead>
             <tr>
-              <th class="border border-slate-600 p-2 w-28">Started work</th>
-              <th class="border border-slate-600 p-2">Position at work</th>
-              <th class="border border-slate-600 p-2">Company</th>
-              <th class="border border-slate-600 p-2">Location</th>
-              <th class="border border-slate-600 p-2 w-28">Finished work</th>
+              <th class="border border-slate-600 p-2 w-28">Lavoro inizio</th>
+              <th class="border border-slate-600 p-2">Posizione</th>
+              <th class="border border-slate-600 p-2">Azienda</th>
+              <th class="border border-slate-600 p-2">Posizione</th>
+              <th class="border border-slate-600 p-2 w-28">Lavoro finito</th>
             </tr>
           </thead>
           <tbody>
             {workingExperiencesSignal.value.map((we) =>
               <tr class="p-12" key={we.id}>
                 <td class="border border-slate-700 p-2">{we.startedWork}</td>
-                <td class="border border-slate-700 p-2">{we.positionAtWork.name}</td>
+                <td class="border border-slate-700 p-2">{we.positionAtWork.nameItaly}</td>
                 <td class="border border-slate-700 p-2">{we.company.name}</td>
                 <td class="border border-slate-700 p-2">{we.company.location}</td>
                 <td class="border border-slate-700 p-2">{we.finishedWork}</td>
@@ -90,13 +92,13 @@ export default component$(() => {
       <div class="table-container flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
           <caption class="caption-top text-2xl font-bold p-4">
-            Course certifications
+            Corsi
           </caption>
           <thead>
             <tr>
-              <th class="border border-slate-600 p-2">Course name</th>
-              <th class="border border-slate-600 p-2">Course brand</th>
-              <th class="border border-slate-600 p-2">Finished studying</th>
+              <th class="border border-slate-600 p-2">Nome di corso</th>
+              <th class="border border-slate-600 p-2">Marchio del corso</th>
+              <th class="border border-slate-600 p-2">Finito di studiare</th>
             </tr>
           </thead>
           <tbody>
@@ -115,16 +117,16 @@ export default component$(() => {
       <div class="flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
           <caption class="caption-top text-2xl font-bold p-4">
-            Academic degrees
+            Titoli accademici
           </caption>
           <thead>
             <tr>
-              <th class="w-28 border border-slate-600 p-2">Started studying</th>
-              <th class="border border-slate-600 p-2">Academic degree</th>
-              <th class="border border-slate-600 p-2">Speciality</th>
-              <th class="border border-slate-600 p-2">Educational institution</th>
-              <th class="border border-slate-600 p-2">Location</th>
-              <th class="w-28 border border-slate-600 p-2">Finished studying</th>
+              <th class="w-28 border border-slate-600 p-2">Iniziato a studiare</th>
+              <th class="border border-slate-600 p-2">Titolo accademico</th>
+              <th class="border border-slate-600 p-2">Specialità</th>
+              <th class="border border-slate-600 p-2">Istituto d'Istruzione</th>
+              <th class="border border-slate-600 p-2">Posizione</th>
+              <th class="w-28 border border-slate-600 p-2">Finito di studiare</th>
             </tr>
           </thead>
           <tbody>
@@ -135,8 +137,8 @@ export default component$(() => {
                 <td class="border border-slate-700 p-2">{
                   (q.academicDegree) === "JUNIOR_SPECIALIST" ? "JUNIOR SPECIALIST" : q.academicDegree
                 }</td>
-                <td class="border border-slate-700 p-2">{q.speciality}</td>
-                <td class="border border-slate-700 p-2">{q.educationalInstitution.name}</td>
+                <td class="border border-slate-700 p-2">{q.specialityItaly}</td>
+                <td class="border border-slate-700 p-2">{q.educationalInstitution.nameItaly}</td>
                 <td class="border border-slate-700 p-2">{q.educationalInstitution.location}</td>
                 <td class="border border-slate-700 p-2">{q.finishedStudying}</td>
               </tr>
@@ -149,7 +151,9 @@ export default component$(() => {
         all'art. 13 del Regolamento UE 2016/679 relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati
         personali.
       </div>
+
     </div>
+
   );
 });
 

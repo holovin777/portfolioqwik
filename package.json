@@ -20,7 +20,6 @@
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
-    "prod": "vercel --prod",
     "start": "vite --open --mode ssr",
     "start0": "vite --open --mode ssr --host 0.0.0.0",
     "qwik": "qwik"
