@@ -122,7 +122,7 @@ export default component$(() => {
         </table>
       </div>
 
-      <div class="flex justify-center mt-4">
+      <div class="table-container flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
           <caption class="caption-top text-2xl font-bold p-4">
             Titoli accademici
