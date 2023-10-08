@@ -70,11 +70,11 @@ export default component$(() => {
           </caption>
           <thead>
             <tr>
-              <th class="border border-slate-600 p-2 w-8">Lavoro inizio</th>
-              <th class="border border-slate-600 p-2">Posizione</th>
+              <th class="border border-slate-600 p-2 w-8">Data d'inizio</th>
+              <th class="border border-slate-600 p-2">Professione</th>
               <th class="border border-slate-600 p-2">Azienda</th>
-              <th class="border border-slate-600 p-2">Posizione</th>
-              <th class="border border-slate-600 p-2 w-8">Lavoro finito</th>
+              <th class="border border-slate-600 p-2">Luogo</th>
+              <th class="border border-slate-600 p-2 w-8">Data di fine</th>
             </tr>
           </thead>
           <tbody>
@@ -102,9 +102,9 @@ export default component$(() => {
           </caption>
           <thead>
             <tr>
-              <th class="border border-slate-600 p-2">Nome di corso</th>
-              <th class="border border-slate-600 p-2">Marchio del corso</th>
-              <th class="border border-slate-600 p-2">Finito di studiare</th>
+              <th class="border border-slate-600 p-2">Nome del corso</th>
+              <th class="border border-slate-600 p-2">Azienda</th>
+              <th class="border border-slate-600 p-2">Data di fine</th>
             </tr>
           </thead>
           <tbody>
@@ -129,12 +129,12 @@ export default component$(() => {
           </caption>
           <thead>
             <tr>
-              <th class="w-8 border border-slate-600 p-2">Iniziato a studiare</th>
+              <th class="w-8 border border-slate-600 p-2">Data d'inizio</th>
               <th class="border border-slate-600 p-2">Titolo accademico</th>
-              <th class="border border-slate-600 p-2">Specialità</th>
+              <th class="border border-slate-600 p-2">Specialisazione</th>
               <th class="border border-slate-600 p-2">Istituto d'Istruzione</th>
-              <th class="border border-slate-600 p-2">Posizione</th>
-              <th class="w-8 border border-slate-600 p-2">Finito di studiare</th>
+              <th class="border border-slate-600 p-2">Luogo</th>
+              <th class="w-8 border border-slate-600 p-2">Data di fine</th>
             </tr>
           </thead>
           <tbody>
