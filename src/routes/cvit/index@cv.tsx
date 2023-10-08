@@ -55,7 +55,9 @@ export default component$(() => {
       <div class="text-center text-3xl pb-4">Curriculum vitae</div>
       <div class="m-4 text-4xl font-bold">{customerSignal.value.firstName + " " + customerSignal.value.lastName}</div>
       <div class="">Numero: <span class="font-bold">{customerSignal.value.phoneNumber}</span></div>
-      <div class="">Data di nacsita: <span class="font-bold">{customerSignal.value.birthday}</span></div>
+      <div class="">Data di nacsita: <span class="font-bold">
+        {(new Date(customerSignal.value.birthday)).toLocaleString('it-IT', { year: 'numeric', month: 'numeric', day: 'numeric' })}
+      </span></div>
       <div class="">Email: <span class="font-bold">{customerSignal.value.email}</span></div>
       <div class="">Residenza: <span class="font-bold">{customerSignal.value.residence}</span></div>
       <a href={customerSignal.value.website}>Sito web: <span class="font-bold">{customerSignal.value.website}</span></a>
@@ -68,21 +70,25 @@ export default component$(() => {
           </caption>
           <thead>
             <tr>
-              <th class="border border-slate-600 p-2 w-28">Lavoro inizio</th>
+              <th class="border border-slate-600 p-2 w-8">Lavoro inizio</th>
               <th class="border border-slate-600 p-2">Posizione</th>
               <th class="border border-slate-600 p-2">Azienda</th>
               <th class="border border-slate-600 p-2">Posizione</th>
-              <th class="border border-slate-600 p-2 w-28">Lavoro finito</th>
+              <th class="border border-slate-600 p-2 w-8">Lavoro finito</th>
             </tr>
           </thead>
           <tbody>
             {workingExperiencesSignal.value.map((we) =>
               <tr class="p-12" key={we.id}>
-                <td class="border border-slate-700 p-2">{we.startedWork}</td>
+                <td class="border border-slate-700 p-2">
+                  {(new Date(we.startedWork)).toLocaleString('it-IT', { year: 'numeric', month: 'numeric', day: 'numeric' })}
+                </td>
                 <td class="border border-slate-700 p-2">{we.positionAtWork.nameItaly}</td>
                 <td class="border border-slate-700 p-2">{we.company.name}</td>
                 <td class="border border-slate-700 p-2">{we.company.location}</td>
-                <td class="border border-slate-700 p-2">{we.finishedWork}</td>
+                <td class="border border-slate-700 p-2">
+                  {(new Date(we.finishedWork)).toLocaleString('it-IT', { year: 'numeric', month: 'numeric', day: 'numeric' })}
+                </td>
               </tr>
             )}
           </tbody>
@@ -107,7 +113,9 @@ export default component$(() => {
               <tr class="p-12" key={q.id}>
                 <td class="border border-slate-700 p-2">{q.course.name}</td>
                 <td class="border border-slate-700 p-2">{q.educationalInstitution.name}</td>
-                <td class="border border-slate-700 p-2 w-28">{q.finishedStudying}</td>
+                <td class="border border-slate-700 p-2 w-8">
+                  {(new Date(q.finishedStudying)).toLocaleString('it-IT', { year: 'numeric', month: 'numeric', day: 'numeric' })}
+                </td>
               </tr>
             )}
           </tbody>
@@ -121,26 +129,30 @@ export default component$(() => {
           </caption>
           <thead>
             <tr>
-              <th class="w-28 border border-slate-600 p-2">Iniziato a studiare</th>
+              <th class="w-8 border border-slate-600 p-2">Iniziato a studiare</th>
               <th class="border border-slate-600 p-2">Titolo accademico</th>
               <th class="border border-slate-600 p-2">Specialità</th>
               <th class="border border-slate-600 p-2">Istituto d'Istruzione</th>
               <th class="border border-slate-600 p-2">Posizione</th>
-              <th class="w-28 border border-slate-600 p-2">Finito di studiare</th>
+              <th class="w-8 border border-slate-600 p-2">Finito di studiare</th>
             </tr>
           </thead>
           <tbody>
             {qualificationsSignal.value.map((q) =>
               (q.educationalInstitution.studyPlace === "UNIVERSITY" || q.educationalInstitution.studyPlace === "COLLEGE") &&
               <tr class="p-12" key={q.id}>
-                <td class="border border-slate-700 p-2">{q.startedStudying}</td>
+                <td class="border border-slate-700 p-2">
+                  {(new Date(q.startedStudying)).toLocaleString('it-IT', { year: 'numeric', month: 'numeric', day: 'numeric' })}
+                </td>
                 <td class="border border-slate-700 p-2">{
                   (q.academicDegree) === "JUNIOR_SPECIALIST" ? "JUNIOR SPECIALIST" : q.academicDegree
                 }</td>
                 <td class="border border-slate-700 p-2">{q.specialityItaly}</td>
                 <td class="border border-slate-700 p-2">{q.educationalInstitution.nameItaly}</td>
                 <td class="border border-slate-700 p-2">{q.educationalInstitution.location}</td>
-                <td class="border border-slate-700 p-2">{q.finishedStudying}</td>
+                <td class="border border-slate-700 p-2">
+                  {(new Date(q.finishedStudying)).toLocaleString('it-IT', { year: 'numeric', month: 'numeric', day: 'numeric' })}
+                </td>
               </tr>
             )}
           </tbody>
