@@ -3,8 +3,8 @@ PortfolioQwik frontend for PortfolioSpring backend
 
 ```bash
 git@github.com:holovin777/portfolioqwik.git
-npm install
 cd portfolioqwik
+npm install
 vim .env
 ```
 
