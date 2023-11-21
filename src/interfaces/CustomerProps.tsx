@@ -2,16 +2,16 @@ import type QualificationProps from "./QualificationProps";
 import type WorkingExperienceProps from "./WorkingExperienceProps";
 
 export default interface CustomerProps {
-    firstName: string;
-    lastName: string;
-    desiredProfession: string;
-    description: string;
-    phoneNumber: string;
-    birthday: string;
-    email: string;
-    residence: string;
-    website: string;
-    drivingLicense: string;
-    workingExperiences: WorkingExperienceProps[],
-    qualifications: QualificationProps[];
+  firstName: string;
+  lastName: string;
+  desiredProfession: string;
+  description: string;
+  phoneNumber: string;
+  birthday: string;
+  email: string;
+  residence: string;
+  website: string;
+  drivingLicense: string;
+  workingExperiences: WorkingExperienceProps[];
+  qualifications: QualificationProps[];
 }
