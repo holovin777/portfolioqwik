@@ -18,7 +18,7 @@ export default component$(() => {
     <div class="p-4">
       <div class="dark:text-sky-300 text-4xl font-bold">{customerSignal.value.firstName + " " + customerSignal.value.lastName}</div>
       <div class="dark:text-sky-400 text-4xl">{customerSignal.value.desiredProfession}</div>
-      <div class="my-4 dark:text-sky-500 text-2xl"> - {customerSignal.value.description}</div>
+      <div class="my-4 dark:text-sky-500 text-2xl">{customerSignal.value.description}</div>
     </div>
   );
 });
