@@ -170,7 +170,7 @@ export default component$(() => {
             <tr>
               <th class="w-8 border border-slate-600 p-2">Data d'inizio</th>
               <th class="border border-slate-600 p-2">Titolo accademico</th>
-              <th class="border border-slate-600 p-2">Specialisazione</th>
+              <th class="border border-slate-600 p-2">Specializzazione</th>
               <th class="border border-slate-600 p-2">Istituto d'Istruzione</th>
               <th class="border border-slate-600 p-2">Luogo</th>
               <th class="w-8 border border-slate-600 p-2">Data di fine</th>
