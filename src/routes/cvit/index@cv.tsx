@@ -134,39 +134,6 @@ export default component$(() => {
 
       <div class="table-container flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
-          <caption class="caption-top text-2xl font-bold p-4">Corsi</caption>
-          <thead>
-            <tr>
-              <th class="border border-slate-600 p-2">Data di fine</th>
-              <th class="border border-slate-600 p-2">Nome del corso</th>
-              <th class="border border-slate-600 p-2">Azienda</th>
-            </tr>
-          </thead>
-          <tbody>
-            {qualificationsSignal.value.map(
-              (q) =>
-                q.educationalInstitution.studyPlace === "COURSE" && (
-                  <tr class="p-12" key={q.id}>
-                    <td class="border border-slate-700 p-2 w-8">
-                      {new Date(q.finishedStudying).toLocaleString("it-IT", {
-                        year: "numeric",
-                        month: "numeric",
-                        day: "numeric",
-                      })}
-                    </td>
-                    <td class="border border-slate-700 p-2">{q.course.name}</td>
-                    <td class="border border-slate-700 p-2">
-                      {q.educationalInstitution.name}
-                    </td>
-                  </tr>
-                )
-            )}
-          </tbody>
-        </table>
-      </div>
-
-      <div class="table-container flex justify-center mt-4">
-        <table class="border-separate border border-slate-500 hover:border-spacing-1">
           <caption class="caption-top text-2xl font-bold p-4">
             Titoli accademici
           </caption>
@@ -215,6 +182,39 @@ export default component$(() => {
                     </td>
                     <td class="border border-slate-700 p-2">
                       {q.educationalInstitution.location}
+                    </td>
+                  </tr>
+                )
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-container flex justify-center mt-4">
+        <table class="border-separate border border-slate-500 hover:border-spacing-1">
+          <caption class="caption-top text-2xl font-bold p-4">Certificazioni consentite</caption>
+          <thead>
+            <tr>
+              <th class="border border-slate-600 p-2">Data di fine</th>
+              <th class="border border-slate-600 p-2">Nome del corso</th>
+              <th class="border border-slate-600 p-2">Azienda</th>
+            </tr>
+          </thead>
+          <tbody>
+            {qualificationsSignal.value.map(
+              (q) =>
+                q.educationalInstitution.studyPlace === "COURSE" && (
+                  <tr class="p-12" key={q.id}>
+                    <td class="border border-slate-700 p-2 w-8">
+                      {new Date(q.finishedStudying).toLocaleString("it-IT", {
+                        year: "numeric",
+                        month: "numeric",
+                        day: "numeric",
+                      })}
+                    </td>
+                    <td class="border border-slate-700 p-2">{q.course.name}</td>
+                    <td class="border border-slate-700 p-2">
+                      {q.educationalInstitution.name}
                     </td>
                   </tr>
                 )
