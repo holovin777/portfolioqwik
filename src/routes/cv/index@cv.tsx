@@ -85,24 +85,26 @@ export default component$(() => {
           <thead>
             <tr>
               <th class="border border-slate-600 p-2 w-28">Started work</th>
+              <th class="border border-slate-600 p-2 w-28">Finished work</th>
               <th class="border border-slate-600 p-2">Position at work</th>
               <th class="border border-slate-600 p-2">Company</th>
+              <th class="border border-slate-600 p-2">Description</th>
               <th class="border border-slate-600 p-2">Location</th>
-              <th class="border border-slate-600 p-2 w-28">Finished work</th>
             </tr>
           </thead>
           <tbody>
             {workingExperiencesSignal.value.map((we) => (
               <tr class="p-12" key={we.id}>
                 <td class="border border-slate-700 p-2">{we.startedWork}</td>
+                <td class="border border-slate-700 p-2">{we.finishedWork}</td>
                 <td class="border border-slate-700 p-2">
-                  {we.positionAtWork.name}
+                  <b>{we.positionAtWork.name}</b>
                 </td>
                 <td class="border border-slate-700 p-2">{we.company.name}</td>
+                <td class="border border-slate-700 p-2">{we.jobDescription}</td>
                 <td class="border border-slate-700 p-2">
                   {we.company.location}
                 </td>
-                <td class="border border-slate-700 p-2">{we.finishedWork}</td>
               </tr>
             ))}
           </tbody>
@@ -116,9 +118,9 @@ export default component$(() => {
           </caption>
           <thead>
             <tr>
+              <th class="border border-slate-600 p-2">Finished studying</th>
               <th class="border border-slate-600 p-2">Course name</th>
               <th class="border border-slate-600 p-2">Course brand</th>
-              <th class="border border-slate-600 p-2">Finished studying</th>
             </tr>
           </thead>
           <tbody>
@@ -126,12 +128,12 @@ export default component$(() => {
               (q) =>
                 q.educationalInstitution.studyPlace === "COURSE" && (
                   <tr class="p-12" key={q.id}>
+                    <td class="border border-slate-700 p-2 w-28">
+                      {q.finishedStudying}
+                    </td>
                     <td class="border border-slate-700 p-2">{q.course.name}</td>
                     <td class="border border-slate-700 p-2">
                       {q.educationalInstitution.name}
-                    </td>
-                    <td class="border border-slate-700 p-2 w-28">
-                      {q.finishedStudying}
                     </td>
                   </tr>
                 )
@@ -148,15 +150,15 @@ export default component$(() => {
           <thead>
             <tr>
               <th class="w-28 border border-slate-600 p-2">Started studying</th>
+              <th class="w-28 border border-slate-600 p-2">
+                Finished studying
+              </th>
               <th class="border border-slate-600 p-2">Academic degree</th>
               <th class="border border-slate-600 p-2">Speciality</th>
               <th class="border border-slate-600 p-2">
                 Educational institution
               </th>
               <th class="border border-slate-600 p-2">Location</th>
-              <th class="w-28 border border-slate-600 p-2">
-                Finished studying
-              </th>
             </tr>
           </thead>
           <tbody>
@@ -169,9 +171,14 @@ export default component$(() => {
                       {q.startedStudying}
                     </td>
                     <td class="border border-slate-700 p-2">
-                      {q.academicDegree === "JUNIOR_SPECIALIST"
-                        ? "JUNIOR SPECIALIST"
-                        : q.academicDegree}
+                      {q.finishedStudying}
+                    </td>
+                    <td class="border border-slate-700 p-2">
+                      <b>
+                        {q.academicDegree === "JUNIOR_SPECIALIST"
+                          ? "JUNIOR SPECIALIST"
+                          : q.academicDegree}
+                      </b>
                     </td>
                     <td class="border border-slate-700 p-2">{q.speciality}</td>
                     <td class="border border-slate-700 p-2">
@@ -179,9 +186,6 @@ export default component$(() => {
                     </td>
                     <td class="border border-slate-700 p-2">
                       {q.educationalInstitution.location}
-                    </td>
-                    <td class="border border-slate-700 p-2">
-                      {q.finishedStudying}
                     </td>
                   </tr>
                 )

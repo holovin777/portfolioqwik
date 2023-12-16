@@ -92,10 +92,11 @@ export default component$(() => {
           <thead>
             <tr>
               <th class="border border-slate-600 p-2 w-8">Data d'inizio</th>
+              <th class="border border-slate-600 p-2 w-8">Data di fine</th>
               <th class="border border-slate-600 p-2">Professione</th>
               <th class="border border-slate-600 p-2">Azienda</th>
+              <th class="border border-slate-600 p-2">Discrizzioni</th>
               <th class="border border-slate-600 p-2">Luogo</th>
-              <th class="border border-slate-600 p-2 w-8">Data di fine</th>
             </tr>
           </thead>
           <tbody>
@@ -109,18 +110,21 @@ export default component$(() => {
                   })}
                 </td>
                 <td class="border border-slate-700 p-2">
-                  {we.positionAtWork.nameItaly}
-                </td>
-                <td class="border border-slate-700 p-2">{we.company.name}</td>
-                <td class="border border-slate-700 p-2">
-                  {we.company.location}
-                </td>
-                <td class="border border-slate-700 p-2">
                   {new Date(we.finishedWork).toLocaleString("it-IT", {
                     year: "numeric",
                     month: "numeric",
                     day: "numeric",
                   })}
+                </td>
+                <td class="border border-slate-700 p-2">
+                  <b>{we.positionAtWork.nameItaly}</b>
+                </td>
+                <td class="border border-slate-700 p-2">{we.company.name}</td>
+                <td class="border border-slate-700 p-2">
+                  {we.jobDescriptionItaly}
+                </td>
+                <td class="border border-slate-700 p-2">
+                  {we.company.location}
                 </td>
               </tr>
             ))}
@@ -133,9 +137,9 @@ export default component$(() => {
           <caption class="caption-top text-2xl font-bold p-4">Corsi</caption>
           <thead>
             <tr>
+              <th class="border border-slate-600 p-2">Data di fine</th>
               <th class="border border-slate-600 p-2">Nome del corso</th>
               <th class="border border-slate-600 p-2">Azienda</th>
-              <th class="border border-slate-600 p-2">Data di fine</th>
             </tr>
           </thead>
           <tbody>
@@ -143,16 +147,16 @@ export default component$(() => {
               (q) =>
                 q.educationalInstitution.studyPlace === "COURSE" && (
                   <tr class="p-12" key={q.id}>
-                    <td class="border border-slate-700 p-2">{q.course.name}</td>
-                    <td class="border border-slate-700 p-2">
-                      {q.educationalInstitution.name}
-                    </td>
                     <td class="border border-slate-700 p-2 w-8">
                       {new Date(q.finishedStudying).toLocaleString("it-IT", {
                         year: "numeric",
                         month: "numeric",
                         day: "numeric",
                       })}
+                    </td>
+                    <td class="border border-slate-700 p-2">{q.course.name}</td>
+                    <td class="border border-slate-700 p-2">
+                      {q.educationalInstitution.name}
                     </td>
                   </tr>
                 )
@@ -169,11 +173,11 @@ export default component$(() => {
           <thead>
             <tr>
               <th class="w-8 border border-slate-600 p-2">Data d'inizio</th>
+              <th class="w-8 border border-slate-600 p-2">Data di fine</th>
               <th class="border border-slate-600 p-2">Titolo accademico</th>
               <th class="border border-slate-600 p-2">Specializzazione</th>
               <th class="border border-slate-600 p-2">Istituto d'Istruzione</th>
               <th class="border border-slate-600 p-2">Luogo</th>
-              <th class="w-8 border border-slate-600 p-2">Data di fine</th>
             </tr>
           </thead>
           <tbody>
@@ -190,9 +194,18 @@ export default component$(() => {
                       })}
                     </td>
                     <td class="border border-slate-700 p-2">
-                      {q.academicDegree === "JUNIOR_SPECIALIST"
-                        ? "JUNIOR SPECIALIST"
-                        : q.academicDegree}
+                      {new Date(q.finishedStudying).toLocaleString("it-IT", {
+                        year: "numeric",
+                        month: "numeric",
+                        day: "numeric",
+                      })}
+                    </td>
+                    <td class="border border-slate-700 p-2">
+                      <b>
+                        {q.academicDegree === "JUNIOR_SPECIALIST"
+                          ? "JUNIOR SPECIALIST"
+                          : q.academicDegree}
+                      </b>
                     </td>
                     <td class="border border-slate-700 p-2">
                       {q.specialityItaly}
@@ -202,13 +215,6 @@ export default component$(() => {
                     </td>
                     <td class="border border-slate-700 p-2">
                       {q.educationalInstitution.location}
-                    </td>
-                    <td class="border border-slate-700 p-2">
-                      {new Date(q.finishedStudying).toLocaleString("it-IT", {
-                        year: "numeric",
-                        month: "numeric",
-                        day: "numeric",
-                      })}
                     </td>
                   </tr>
                 )
