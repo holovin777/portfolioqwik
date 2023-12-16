@@ -117,7 +117,7 @@ export default component$(() => {
                   })}
                 </td>
                 <td class="border border-slate-700 p-2">
-                  <b>{we.positionAtWork.nameItaly}</b>
+                  <u>{we.positionAtWork.nameItaly}</u>
                 </td>
                 <td class="border border-slate-700 p-2">{we.company.name}</td>
                 <td class="border border-slate-700 p-2">
@@ -168,11 +168,11 @@ export default component$(() => {
                       })}
                     </td>
                     <td class="border border-slate-700 p-2">
-                      <b>
+                      <u>
                         {q.academicDegree === "JUNIOR_SPECIALIST"
                           ? "JUNIOR SPECIALIST"
                           : q.academicDegree}
-                      </b>
+                      </u>
                     </td>
                     <td class="border border-slate-700 p-2">
                       {q.specialityItaly}
@@ -212,7 +212,7 @@ export default component$(() => {
                         day: "numeric",
                       })}
                     </td>
-                    <td class="border border-slate-700 p-2">{q.course.name}</td>
+                    <td class="border border-slate-700 p-2"><u>{q.course.name}</u></td>
                     <td class="border border-slate-700 p-2">
                       {q.educationalInstitution.name}
                     </td>

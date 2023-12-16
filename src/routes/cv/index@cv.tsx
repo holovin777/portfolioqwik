@@ -98,7 +98,7 @@ export default component$(() => {
                 <td class="border border-slate-700 p-2">{we.startedWork}</td>
                 <td class="border border-slate-700 p-2">{we.finishedWork}</td>
                 <td class="border border-slate-700 p-2">
-                  <b>{we.positionAtWork.name}</b>
+                  <u>{we.positionAtWork.name}</u>
                 </td>
                 <td class="border border-slate-700 p-2">{we.company.name}</td>
                 <td class="border border-slate-700 p-2">{we.jobDescription}</td>
@@ -143,11 +143,11 @@ export default component$(() => {
                       {q.finishedStudying}
                     </td>
                     <td class="border border-slate-700 p-2">
-                      <b>
+                      <u>
                         {q.academicDegree === "JUNIOR_SPECIALIST"
                           ? "JUNIOR SPECIALIST"
                           : q.academicDegree}
-                      </b>
+                      </u>
                     </td>
                     <td class="border border-slate-700 p-2">{q.speciality}</td>
                     <td class="border border-slate-700 p-2">
@@ -183,7 +183,7 @@ export default component$(() => {
                     <td class="border border-slate-700 p-2 w-28">
                       {q.finishedStudying}
                     </td>
-                    <td class="border border-slate-700 p-2">{q.course.name}</td>
+                    <td class="border border-slate-700 p-2"><u>{q.course.name}</u></td>
                     <td class="border border-slate-700 p-2">
                       {q.educationalInstitution.name}
                     </td>
