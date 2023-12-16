@@ -111,37 +111,6 @@ export default component$(() => {
         </table>
       </div>
 
-      <div class="table-container flex justify-center mt-4">
-        <table class="border-separate border border-slate-500 hover:border-spacing-1">
-          <caption class="caption-top text-2xl font-bold p-4">
-            Course certifications
-          </caption>
-          <thead>
-            <tr>
-              <th class="border border-slate-600 p-2">Finished studying</th>
-              <th class="border border-slate-600 p-2">Course name</th>
-              <th class="border border-slate-600 p-2">Course brand</th>
-            </tr>
-          </thead>
-          <tbody>
-            {qualificationsSignal.value.map(
-              (q) =>
-                q.educationalInstitution.studyPlace === "COURSE" && (
-                  <tr class="p-12" key={q.id}>
-                    <td class="border border-slate-700 p-2 w-28">
-                      {q.finishedStudying}
-                    </td>
-                    <td class="border border-slate-700 p-2">{q.course.name}</td>
-                    <td class="border border-slate-700 p-2">
-                      {q.educationalInstitution.name}
-                    </td>
-                  </tr>
-                )
-            )}
-          </tbody>
-        </table>
-      </div>
-
       <div class="flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
           <caption class="caption-top text-2xl font-bold p-4">
@@ -186,6 +155,37 @@ export default component$(() => {
                     </td>
                     <td class="border border-slate-700 p-2">
                       {q.educationalInstitution.location}
+                    </td>
+                  </tr>
+                )
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-container flex justify-center mt-4">
+        <table class="border-separate border border-slate-500 hover:border-spacing-1">
+          <caption class="caption-top text-2xl font-bold p-4">
+            Course certifications
+          </caption>
+          <thead>
+            <tr>
+              <th class="border border-slate-600 p-2">Finished studying</th>
+              <th class="border border-slate-600 p-2">Course name</th>
+              <th class="border border-slate-600 p-2">Course brand</th>
+            </tr>
+          </thead>
+          <tbody>
+            {qualificationsSignal.value.map(
+              (q) =>
+                q.educationalInstitution.studyPlace === "COURSE" && (
+                  <tr class="p-12" key={q.id}>
+                    <td class="border border-slate-700 p-2 w-28">
+                      {q.finishedStudying}
+                    </td>
+                    <td class="border border-slate-700 p-2">{q.course.name}</td>
+                    <td class="border border-slate-700 p-2">
+                      {q.educationalInstitution.name}
                     </td>
                   </tr>
                 )
