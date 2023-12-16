@@ -193,6 +193,13 @@ export default component$(() => {
           </tbody>
         </table>
       </div>
+
+      {customerSignal.value.protectedCategory === true && (
+        <div class="m-6">
+          APPARTENENTE CAT. PROT. L. 68/99
+        </div>
+      )}
+
       <div class="m-6 text-sm">
         Autorizzo il trattamento dei dati personali contenuti nel mio curriculum
         vitae in base all'art. 13 del D. Lgs. 196/2003 e all'art. 13 del

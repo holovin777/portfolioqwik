@@ -12,6 +12,7 @@ export default interface CustomerProps {
   residence: string;
   website: string;
   drivingLicense: string;
+  protectedCategory: boolean;
   workingExperiences: WorkingExperienceProps[];
   qualifications: QualificationProps[];
 }
