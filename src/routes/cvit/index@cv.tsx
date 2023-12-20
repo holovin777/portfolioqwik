@@ -95,7 +95,7 @@ export default component$(() => {
               <th class="border border-slate-600 p-2 w-8">Data di fine</th>
               <th class="border border-slate-600 p-2">Professione</th>
               <th class="border border-slate-600 p-2">Azienda</th>
-              <th class="border border-slate-600 p-2">Discrizzioni</th>
+              <th class="border border-slate-600 p-2">Descrizzioni</th>
               <th class="border border-slate-600 p-2">Luogo</th>
             </tr>
           </thead>
@@ -192,7 +192,7 @@ export default component$(() => {
 
       <div class="table-container flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
-          <caption class="caption-top text-2xl font-bold p-4">Certificazioni consentite</caption>
+          <caption class="caption-top text-2xl font-bold p-4">Certificazioni conseguite</caption>
           <thead>
             <tr>
               <th class="border border-slate-600 p-2">Data di fine</th>
