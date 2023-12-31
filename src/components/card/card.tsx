@@ -9,6 +9,11 @@ export default component$<CardProps>((props) => {
         <div class="text-gray-700 dark:text-gray-400 my-1 mx-6">
           {props.subtitle}
         </div>
+        {!(props.description === undefined || props.description === null) && (
+          <div class="text-gray-900 dark:text-gray-200 my-2 mx-2">
+            {props.description}
+          </div>
+        )}
         {!(props.items === undefined) &&
           props.items.map((p) => (
             <div key={p} class="text-sm">

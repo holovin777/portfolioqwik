@@ -5,6 +5,7 @@ export default interface CardProps {
   finishedWork?: string;
   title: string;
   subtitle: string;
+  description?: string;
   footer?: string;
   items?: string[];
 }

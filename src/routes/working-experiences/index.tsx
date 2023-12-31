@@ -28,6 +28,7 @@ export default component$(() => {
             key={workingExperience.id}
             title={workingExperience.positionAtWork.name}
             subtitle={workingExperience.company.name}
+            description={workingExperience.jobDescription}
             startedWork={workingExperience.startedWork}
             finishedWork={workingExperience.finishedWork}
             footer={workingExperience.company.location}
