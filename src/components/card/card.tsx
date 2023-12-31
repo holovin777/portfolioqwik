@@ -26,7 +26,7 @@ export default component$<CardProps>((props) => {
           Started studying {props.startDate}
         </div>
       )}
-      {!(props.finishDate === undefined || props.startDate === null) && (
+      {!(props.finishDate === undefined || props.finishDate === null) && (
         <div class="text-xs text-center dark:text-yellow-300 text-yellow-900 m-1">
           Finished studying {props.finishDate}
         </div>
