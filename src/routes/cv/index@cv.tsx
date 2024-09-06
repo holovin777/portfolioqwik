@@ -66,12 +66,19 @@ export default component$(() => {
         Email: <span class="font-bold">{customerSignal.value.email}</span>
       </div>
       <div class="">
-        Residance:{" "}
+        Residence:{" "}
         <span class="font-bold">{customerSignal.value.residence}</span>
       </div>
-      <a href={customerSignal.value.website}>
-        Website: <span class="font-bold">{customerSignal.value.website}</span>
-      </a>
+      <div class="">
+        <a href={customerSignal.value.website}>
+          Website: <span class="font-bold">{customerSignal.value.website}</span>
+        </a>
+      </div>
+      <div class="">
+        <a href={customerSignal.value.blog}>
+          Blog: <span class="font-bold">{customerSignal.value.blog}</span>
+        </a>
+      </div>
       <div class="">
         Driving license:{" "}
         <span class="font-bold">{customerSignal.value.drivingLicense}</span>
@@ -183,7 +190,9 @@ export default component$(() => {
                     <td class="border border-slate-700 p-2 w-28">
                       {q.finishedStudying}
                     </td>
-                    <td class="border border-slate-700 p-2"><u>{q.course.name}</u></td>
+                    <td class="border border-slate-700 p-2">
+                      <u>{q.course.name}</u>
+                    </td>
                     <td class="border border-slate-700 p-2">
                       {q.educationalInstitution.name}
                     </td>
@@ -195,9 +204,7 @@ export default component$(() => {
       </div>
 
       {customerSignal.value.protectedCategory === true && (
-        <div class="m-6">
-          APPARTENENTE CAT. PROT. L. 68/99
-        </div>
+        <div class="m-6">APPARTENENTE CAT. PROT. L. 68/99</div>
       )}
 
       <div class="m-6 text-sm">

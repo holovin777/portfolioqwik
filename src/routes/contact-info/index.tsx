@@ -27,6 +27,7 @@ export default component$(() => {
         phoneNumber={customerSignal.value.phoneNumber}
         email={customerSignal.value.email}
         website={customerSignal.value.website}
+        blog={customerSignal.value.blog}
         residence={customerSignal.value.residence}
         desiredProfession={customerSignal.value.desiredProfession}
       />

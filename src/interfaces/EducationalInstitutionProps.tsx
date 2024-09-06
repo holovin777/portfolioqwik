@@ -1,7 +1,8 @@
 export default interface EducationalInstitutionProps {
   id: string;
   name: string;
-  nameItaly: string;
+  nameIt: string;
   studyPlace: string;
   location: string;
+  locationIt: string;
 }

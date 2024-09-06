@@ -10,7 +10,9 @@ export default interface CustomerProps {
   birthday: string;
   email: string;
   residence: string;
+  residenceIt: string;
   website: string;
+  blog: string;
   drivingLicense: string;
   protectedCategory: boolean;
   workingExperiences: WorkingExperienceProps[];

@@ -29,6 +29,12 @@ export default component$<BuisnessCardProps>((props) => {
         link={props.website}
       />
 
+      <BusinessCardItem
+        icon="/icons/website.svg"
+        message={props.blog.slice(8)}
+        link={props.blog}
+      />
+
       <BusinessCardItem icon="/icons/location.svg" message={props.residence} />
     </div>
   );

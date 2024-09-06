@@ -6,7 +6,7 @@ export default interface WorkingExperienceProps {
   positionAtWork: PositionAtWorkProps;
   company: CompanyProps;
   jobDescription?: string;
-  jobDescriptionItaly: string;
+  jobDescriptionIt?: string;
   startedWork: string;
   finishedWork: string;
 }
