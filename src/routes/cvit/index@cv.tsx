@@ -74,11 +74,18 @@ export default component$(() => {
       </div>
       <div class="">
         Residenza:{" "}
-        <span class="font-bold">{customerSignal.value.residence}</span>
+        <span class="font-bold">{customerSignal.value.residenceIt}</span>
       </div>
-      <a href={customerSignal.value.website}>
-        Sito web: <span class="font-bold">{customerSignal.value.website}</span>
-      </a>
+      <div class="">
+        <a href={customerSignal.value.website}>
+          Sito web: <span class="font-bold">{customerSignal.value.website}</span>
+        </a>
+      </div>
+      <div class="">
+        <a href={customerSignal.value.blog}>
+          Blog: <span class="font-bold">{customerSignal.value.blog}</span>
+        </a>
+      </div>
       <div class="">
         Patente:{" "}
         <span class="font-bold">{customerSignal.value.drivingLicense}</span>
@@ -96,7 +103,7 @@ export default component$(() => {
               <th class="border border-slate-600 p-2">Professione</th>
               <th class="border border-slate-600 p-2">Azienda</th>
               <th class="border border-slate-600 p-2">Descrizzioni</th>
-              <th class="border border-slate-600 p-2">Luogo</th>
+              <th class="border border-slate-600 p-2 w-40">Luogo</th>
             </tr>
           </thead>
           <tbody>
@@ -117,14 +124,14 @@ export default component$(() => {
                   })}
                 </td>
                 <td class="border border-slate-700 p-2">
-                  <u>{we.positionAtWork.nameItaly}</u>
+                  <u>{we.positionAtWork.nameIt}</u>
                 </td>
-                <td class="border border-slate-700 p-2">{we.company.name}</td>
+                <td class="border border-slate-700 p-2">{we.company.nameIt}</td>
                 <td class="border border-slate-700 p-2">
-                  {we.jobDescriptionItaly}
+                  {we.jobDescriptionIt}
                 </td>
                 <td class="border border-slate-700 p-2">
-                  {we.company.location}
+                  {we.company.locationIt}
                 </td>
               </tr>
             ))}
@@ -175,13 +182,13 @@ export default component$(() => {
                       </u>
                     </td>
                     <td class="border border-slate-700 p-2">
-                      {q.specialityItaly}
+                      {q.specialityIt}
                     </td>
                     <td class="border border-slate-700 p-2">
-                      {q.educationalInstitution.nameItaly}
+                      {q.educationalInstitution.nameIt}
                     </td>
                     <td class="border border-slate-700 p-2">
-                      {q.educationalInstitution.location}
+                      {q.educationalInstitution.locationIt}
                     </td>
                   </tr>
                 )

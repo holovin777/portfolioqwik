@@ -4,6 +4,7 @@ export default interface BuisnessCardProps {
   phoneNumber: string;
   email: string;
   website: string;
+  blog: string;
   residence: string;
   desiredProfession: string;
 }

@@ -8,7 +8,7 @@ export default interface QualificationProps {
   faculty: string;
   department: string;
   speciality: string;
-  specialityItaly: string;
+  specialityIt: string;
   course: CourseProps;
   startedStudying: string;
   finishedStudying: string;
