@@ -78,7 +78,8 @@ export default component$(() => {
       </div>
       <div class="">
         <a href={customerSignal.value.website}>
-          Sito web: <span class="font-bold">{customerSignal.value.website}</span>
+          Sito web:{" "}
+          <span class="font-bold">{customerSignal.value.website}</span>
         </a>
       </div>
       <div class="">
@@ -117,11 +118,13 @@ export default component$(() => {
                   })}
                 </td>
                 <td class="border border-slate-700 p-2">
-                  {new Date(we.finishedWork).toLocaleString("it-IT", {
-                    year: "numeric",
-                    month: "numeric",
-                    day: "numeric",
-                  })}
+                  {we.finishedWork
+                    ? new Date(we.finishedWork).toLocaleString("it-IT", {
+                        year: "numeric",
+                        month: "numeric",
+                        day: "numeric",
+                      })
+                    : ""}
                 </td>
                 <td class="border border-slate-700 p-2">
                   <u>{we.positionAtWork.nameIt}</u>
@@ -199,7 +202,9 @@ export default component$(() => {
 
       <div class="table-container flex justify-center mt-4">
         <table class="border-separate border border-slate-500 hover:border-spacing-1">
-          <caption class="caption-top text-2xl font-bold p-4">Certificazioni conseguite</caption>
+          <caption class="caption-top text-2xl font-bold p-4">
+            Certificazioni conseguite
+          </caption>
           <thead>
             <tr>
               <th class="border border-slate-600 p-2">Data di fine</th>
@@ -219,7 +224,9 @@ export default component$(() => {
                         day: "numeric",
                       })}
                     </td>
-                    <td class="border border-slate-700 p-2"><u>{q.course.name}</u></td>
+                    <td class="border border-slate-700 p-2">
+                      <u>{q.course.name}</u>
+                    </td>
                     <td class="border border-slate-700 p-2">
                       {q.educationalInstitution.name}
                     </td>
@@ -231,9 +238,7 @@ export default component$(() => {
       </div>
 
       {customerSignal.value.protectedCategory === true && (
-        <div class="m-6">
-          APPARTENENTE CAT. PROT. L. 68/99
-        </div>
+        <div class="m-6">APPARTENENTE CAT. PROT. L. 68/99</div>
       )}
 
       <div class="m-6 text-sm">
